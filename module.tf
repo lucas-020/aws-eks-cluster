@@ -105,5 +105,3 @@ module "eks" {
 #   cidr_block = "10.0.0.0/16"
 }
 
-	git config --global  user.name     lucas-020
-  git config --global  user.email    projectx7cluster@gmail.com
