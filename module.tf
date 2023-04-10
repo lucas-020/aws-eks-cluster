@@ -29,7 +29,7 @@ module "eks" {
 
   # Self Managed Node Group(s)
   self_managed_node_group_defaults = {
-    instance_type                          = "m6i.large"
+    instance_type                          = "t3.small"
     update_launch_template_default_version = true
     iam_role_additional_policies = {
       AmazonSSMManagedInstanceCore = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
@@ -52,7 +52,7 @@ module "eks" {
 
         override = [
           {
-            instance_type     = "m5.large"
+            instance_type     = "t3.micro"
             weighted_capacity = "1"
           }
         ]
