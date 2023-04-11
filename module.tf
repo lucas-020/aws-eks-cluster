@@ -1,3 +1,4 @@
+################ Amazon EKS Cluster ################
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 19.0"
@@ -25,7 +26,7 @@ module "eks" {
 
 
 
-  # Self Managed Node Group(s)
+  ################ Self Managed Node Group(s) ################
   self_managed_node_group_defaults = {
     instance_type                          = "t3.small"
     update_launch_template_default_version = true
@@ -58,7 +59,7 @@ module "eks" {
     }
   }
 
-  # EKS Managed Node Group(s)
+  ################# EKS Managed Node Group(s) ################
   eks_managed_node_group_defaults = {
     instance_types = ["m5.large",]
   }
@@ -75,7 +76,7 @@ module "eks" {
     }
   }
 
-#   # aws-auth configmap
+#   ################# aws-auth configmap ################
 #   manage_aws_auth_configmap = true
 
 #   aws_auth_roles = [
